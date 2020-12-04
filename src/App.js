@@ -10,9 +10,6 @@ const choices = [
   { id: 3, name: "scissors", component: Scissors, losesTo: 1 },
 ];
 
-// 1. handle wins + losses
-// 2. determine the winner based on choices
-// 3. reset the game
 
 export default function App() {
   const [wins, setWins] = useState(0);
@@ -58,11 +55,9 @@ export default function App() {
 
   return (
     <div className="app">
-      {/* information goes here */}
       <div className="info">
         <h2>Rock. Paper. Scissors</h2>
 
-        {/* wins vs losses stats */}
         <div className="wins-losses">
           <div className="wins">
             <span className="number">{wins}</span>
@@ -76,7 +71,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* the popup to show win/lose/draw */}
       {gameState && (
         <div
           className={`game-state ${gameState}`}
@@ -99,12 +93,10 @@ export default function App() {
       )}
 
       <div className="choices">
-        {/* choices captions */}
         <div>You</div>
         <div />
         <div>Computer</div>
 
-        {/* buttons for my choice */}
         <div>
           <button className="rock" onClick={() => handleUserChoice(1)}>
             <Rock />
